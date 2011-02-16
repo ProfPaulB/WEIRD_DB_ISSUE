@@ -17,26 +17,26 @@ public class DatabaseConfig {
 		return new NamedParameterJdbcTemplate(dataSource);
 	}
 	
-	//Creates our connection to our database.  In this case h2
-	@Bean
-	public DataSource dataSource() {
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("org.h2.Driver");
-		dataSource.setUrl("jdbc:h2:mem:testdb_class"); // _class
-		dataSource.setUsername("sa");
-		dataSource.setPassword("");
-		return dataSource;
-	}
-	
-	//Load any default sql files when we compile the project.
-	@Bean
-	public DataSource loadSchema() {
-	    return new EmbeddedDatabaseBuilder()
-	      .setType(EmbeddedDatabaseType.H2)
-	      .addScript("classpath:schema.sql")
-	      //You can include additional .addScript() for multiple sql files.
-	      .build();
-	}
+//	//Creates our connection to our database.  In this case h2
+//	@Bean
+//	public DataSource dataSource() {
+//		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//		dataSource.setDriverClassName("org.h2.Driver");
+//		dataSource.setUrl("jdbc:h2:mem:testdb_class"); // _class
+//		dataSource.setUsername("sa");
+//		dataSource.setPassword("");
+//		return dataSource;
+//	}
+//	
+//	//Load any default sql files when we compile the project.
+//	@Bean
+//	public DataSource loadSchema() {
+//	    return new EmbeddedDatabaseBuilder()
+//	      .setType(EmbeddedDatabaseType.H2)
+//	      .addScript("classpath:schema.sql")
+//	      //You can include additional .addScript() for multiple sql files.
+//	      .build();
+//	}
 
 	
 }

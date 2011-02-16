@@ -21,5 +21,7 @@ public class DatabaseAccess {
 		int rowsAffected = jdbc.update(query, new HashMap());
 		
 		if (rowsAffected > 0) System.out.println("student inserted");
+//		
+//		List<Student> students = jdbc.query("select * from student", namedParameters);
 	}
 }
